@@ -3,9 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Network Activity</title>
+    <title>What-the-Weather</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   </head>
 
+  <body class="m-1">
+
+    <header class="p-4 mb-3 text-center text-white">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <div class="row m-1">
+        <div class="col-sm-4 border border-dark m-1">
+            <div class="">Search for a City:</div>
+            <input type="text" id="city" placeholder="city"><br>
+            <button id="search-button" type="button" class="btn btn-dark">Search</button><br>
+            <button id="place" type="button" class="btn btn-secondary">place</button>
+        </div> 
+        <div class="col-sm-7 border border-dark m-1 ">
+          <div id="city-Input">
+            <div class="days border border-dark row justify-content-center text-white">
+              <div class="day col-sm-2 border border-dark">day 1</div>
+              <div class="day col-sm-2 border border-dark">day 2</div>
+              <div class="day col-sm-2 border border-dark">day 3</div>
+              <div class="day col-sm-2 border border-dark">day 4</div>
+              <div class="day col-sm-2 border border-dark">day 5</div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
+
+    <script src="assets/js/script.js"></script>
+  </body>
 
 </html>

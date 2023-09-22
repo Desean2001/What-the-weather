@@ -1,0 +1,16 @@
+header {
+    background-color: #6B66A3;
+    margin: auto;
+    border-radius: 15px;
+    border: black 1px;
+}
+
+.days {
+    margin: auto;  
+}
+
+.day {
+    background-color: #6B66A3;
+    margin: auto;
+    border-radius: 15px;
+}
