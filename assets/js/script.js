@@ -7,15 +7,27 @@ let day4 = document.getElementById("day-4");
 let day5 = document.getElementById("day-5");
 let Input = document.getElementById("city");
 
-searchButton.addEventListener("click", getCity);
-
-function getCity () {
-    const name = Input.value;
-    showCity (name)
+function callF () {
+    convertCity (Input.value);
 }
 
-function showCity (name) {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&units=Imperial&appid=cfcbb2233907967cf35b711dcb32a448')
+function convertCity (name) {
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=cfcbb2233907967cf35b711dcb32a448`)
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                let lat = data[0].lat;
+                let lon = data[0].lon;
+                showCity(name, lat, lon)
+            })
+        } else {
+            alert('Error: ' + response.statusText);
+        }
+    })    
+}
+
+function showCity (name, latitude, longitude) {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=Imperial&appid=cfcbb2233907967cf35b711dcb32a448`)
     .then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
